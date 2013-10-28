@@ -8,7 +8,7 @@ This gem implements the `cucumber` command for
 Add to the `development` group in your Gemfile:
 
 ``` ruby
-gem "spring-commands-cucumber"
+gem "spring-commands-cucumber", require: false
 ```
 
 Add to your `config/spring.rb`:
