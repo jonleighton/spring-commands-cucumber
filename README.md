@@ -5,14 +5,8 @@ This gem implements the `cucumber` command for
 
 ## Usage
 
-Add to the `development` group in your Gemfile:
+Add to your Gemfile:
 
 ``` ruby
-gem "spring-commands-cucumber", require: false
-```
-
-Add to your `config/spring.rb`:
-
-``` ruby
-require "spring/commands/cucumber"
+gem "spring-commands-cucumber"
 ```
