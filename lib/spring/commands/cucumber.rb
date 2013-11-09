@@ -11,5 +11,6 @@ module Spring
     end
 
     Spring.register_command "cucumber", Cucumber.new
+    Spring::Commands::Rake.environment_matchers[/^cucumber($|:)/] = "test"
   end
 end
