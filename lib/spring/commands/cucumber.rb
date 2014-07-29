@@ -7,7 +7,7 @@ module Spring
 
       self.environment_matchers = {
         :default     => "test",
-        /^features/  => "test" # if a path is passed, make sure the default env is applied
+        /^features($|\/)/  => "test" # if a path is passed, make sure the default env is applied
       }
 
       def env(args)
