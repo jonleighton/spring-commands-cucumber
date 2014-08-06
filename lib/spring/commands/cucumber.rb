@@ -6,16 +6,12 @@ module Spring
       end
 
       self.environment_matchers = {
-        :default     => "test",
-        /^features($|\/)/  => "test" # if a path is passed, make sure the default env is applied
+        :default => "test",
+        /^features($|\/)/ => "test" # if a path is passed, make sure the default env is applied
       }
 
       def env(args)
-        # This is an adaption of the matching that Rake itself does.
-        # See: https://github.com/jimweirich/rake/blob/3754a7639b3f42c2347857a0878beb3523542aee/lib/rake/application.rb#L691-L692
-        if env = args.grep(/^(RAILS|RACK)_ENV=(.*)$/m).last
-          return env.split("=").last
-        end
+        return ENV['RAILS_ENV'] if ENV['RAILS_ENV']
 
         self.class.environment_matchers.each do |matcher, environment|
           return environment if matcher === (args.first || :default)
